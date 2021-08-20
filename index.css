@@ -30,11 +30,12 @@
     color:white;
     font-family: sans-serif;
     text-transform: uppercase;
+    display:inline-block; 
 }
 .nav>li:hover>a{
     background-color: grey;
     color:black;
-    display:inline-block; 
+
 }
 .nav>li:hover>.subnav{
     display:block;
@@ -67,6 +68,10 @@
     float: right;
     line-height: 50px;
     padding:0 16px;
+}
+
+.header>.menu-icon{
+    display:none;
 }
 
 .header>.search-icon:hover{
@@ -111,6 +116,7 @@
     margin-left: auto;
     margin-right: auto;
     padding-top: 74px;
+    max-width: 100%;
 }
 .contact>h2,.content>h2{
     font-weight: 400;
@@ -155,8 +161,9 @@
     width: 800px;
     margin-left: auto;
     margin-right: auto;
-    margin-top:100px;
+    margin-top:110px;
     color:white;
+    max-width: 100%;
 }
 
 
@@ -277,6 +284,11 @@
     font-size: 15px;
     width: 30px;
 }
+.contact-col-l>p>a:hover{
+    opacity: 0.8;
+    color:black;
+}
+
 .contact-col-l,.contact-col-r{
     width: 50%;
     float:left
@@ -284,11 +296,24 @@
 
 .r-col{
     width: 100%;
+    overflow: hidden;
+}
+
+.col-name{
+    width: 50%;
+    float: left;
+    padding:0 8px 0 0;
+}
+
+.col-email{
+    width: 50%;
+    float: left;
+    padding:0 0 0 8px;
 }
 
 .r-col-name,.r-col-email{
     padding:8px;
-    width: 48%;
+    width: 100%;
     border:1px solid #ccc;
 }
 
@@ -320,6 +345,7 @@
 
 .map>img{
     width: 100%;
+    display:block;
 }
 
 .footer{

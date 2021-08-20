@@ -1,0 +1,131 @@
+@media (min-width:740px) and (max-width:1024px){
+    .tour-img{
+        margin: 32px 0px 0;
+    }
+    .contact{
+        padding:74px 16px 110px;
+    }
+    .content{
+        padding:74px 16px 0;
+    }
+}
+
+@media (max-width:739px){
+    .header{
+        overflow: hidden;
+    }
+
+    .header>.search-icon{
+        display:none;
+    }
+    
+    .header>.menu-icon{
+        display: block;
+        float: right;
+        line-height: 50px;
+        padding:0 25px;
+        color: white;
+        font-size: 20px;
+        position:absolute;
+        top:0;
+        right: 0;
+    }
+
+    .header>.menu-icon:hover{
+        background-color: #ccc;
+        color:black;
+    }
+
+    .nav{
+        display:block;
+    }
+
+    .nav>li{
+        display:block;
+    }
+
+    .nav>li:first-child{
+        display:inline-block;
+    }
+
+    .nav>li:hover>a{
+        display:block
+    }
+
+    .subnav{
+        position: initial;
+        background-color:rgba(0,0,0,0.7);
+    }
+
+    .subnav>li{
+        padding:5px 25px;
+    }
+
+    .subnav>li>a{
+        color:#fff;
+    }
+
+    .subnav>li:hover{
+        display:block;
+    }
+
+    .content{
+        padding:74px 16px 0;
+    }
+
+    .member{
+        float:initial;
+        width: 100%;
+    }
+
+    .member>img{
+        width: 60%;
+    }
+
+    .tour-content{
+        padding:0 16px;
+    }
+
+    .tour-palace{
+        float: initial;
+        width: 100%;
+        padding:8px;
+    }
+
+    .tour-body>a{
+        display: inherit;
+        text-align: center;
+        padding:15px 0;
+    }
+
+    .contact{
+        padding:74px 16px 110px;
+    }
+
+    .contact-col-l, .contact-col-r{
+        width: 100%;
+    }
+
+    .contact-col-r{
+        margin-top: 8px;
+    }
+
+    .col-email,.col-name{
+       width: 100%;
+       padding:0;
+       margin:8px 0;
+    }
+
+    .contact-send{
+        width: 100%;
+        padding: 16px;
+        font-size:17px;
+
+    }
+
+    .r-col-name, .r-col-email,.r-col-mes{
+        padding:15px
+    }
+
+}
+

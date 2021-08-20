@@ -5,13 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./responsive.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Trang demo</title>
     <link rel="shortcut icon" href="./235793869_262895895367259_6175142682865030083_n.jpg" type="image/x-icon">
 </head>
 <body>
     <div class="main">
-        <div class="header">
+        <div id="header" class="header">
             <ul class="nav">
                 <li> <a href="#">Home</a> </li>
                 <li> <a href="#band">Band</a> </li>
@@ -29,6 +30,9 @@
             </ul>
             <div class="search-icon">
                 <i class="fas fa-search"></i>
+            </div>
+            <div id="menu" class="menu-icon">
+                <i class="fas fa-bars"></i>
             </div>
         </div>
         <div class="slider">
@@ -103,14 +107,18 @@
            <div class="contact-row">
             <div class="contact-col-l">
                 <p> <i class="fas fa-map-marker-alt"></i>Chicago, US</p>
-                <p> <i class="fas fa-phone-alt"></i>Phone: +00 151515</p>
-                <p> <i class="fas fa-envelope"></i>Email: mail@mail.com</p>
+                <p> <i class="fas fa-phone-alt"></i>Phone: <a href="tel:+00 151515">+00 151515</a></p>
+                <p> <i class="fas fa-envelope"></i>Email: <a href="mailto:mail@mail.com">mail@mail.com</a></p>
             </div>
             <div class="contact-col-r">
                 <form action="">
                     <div class="r-col">
-                        <input type="text" placeholder="Name" required class="r-col-name">
-                        <input type="email" placeholder="Email" required  class="r-col-email">
+                        <div class="col-name">
+                            <input type="text" placeholder="Name" required class="r-col-name">
+                        </div>
+                        <div class="col-email">
+                            <input type="email" placeholder="Email" required  class="r-col-email">
+                        </div>
                     </div>
                     <div class="r-col">
                         <input type="text" placeholder="Message" required class="r-col-mes">
@@ -136,5 +144,35 @@
         
 
     </div>
+    <script>
+        var header = document.getElementById('header');
+        var mobileMenu = document.getElementById('menu');
+        var headerHeight = header.clientHeight;
+
+        // Đóng mở mobilmenu
+        mobileMenu.onclick = function(){
+            var isClose = header.clientHeight === headerHeight ;
+            if (isClose) {
+                header.style.height = 'auto';
+            } else{
+                header.style.height = null;
+            }
+        }
+        /// Tự động đóng menu
+        var menuItems=document.querySelectorAll('.nav>li>a[href*="#"]');
+        for (var i = 0; i < menuItems.length; i++){
+            var menuItem = menuItems[i];
+
+            menuItem.onclick = function(event){
+                var isParentMenu = this.nextElementSibling && this.nextElementSibling.classList.contains('subnav');
+                if (isParentMenu) {
+                    event.preventDefault();
+                } else{
+                    header.style.height = null;
+                }
+                
+            }
+        }
+    </script>
 </body>
 </html>
